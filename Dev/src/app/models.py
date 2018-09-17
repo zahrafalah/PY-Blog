@@ -7,6 +7,6 @@ class posts (models.Model):
   #variable fields
   author = models.CharField(max_length = 30) 
   title = models.CharField(max_length=100) 
-  bodytext = models.TextField()
-  timestamp = models.DateTimeField()
-
+  bodytext = models.TextField(blank=True, null=True)
+  timestamp = models.DateTimeField(blank=True, null=True)
+  featured = models.BooleanField(default=False)
