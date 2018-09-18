@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<h1> First Post: {{ object.title }}</h1>
+<p>{{object.author}}</p>
+<p>{% if object.bodytext %}{{object.bodytext}}{% else %}"Text coming soon"{% endif %}</p>
+<p>{{object.timestamp}}</p>
+
+{% endblock %}
