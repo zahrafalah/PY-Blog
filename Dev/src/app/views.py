@@ -9,7 +9,7 @@ def post_create_view(request):
         form = RawPostForm(request.POST)
         if form.is_valid():
             print(form.cleaned_data)
-            # we pass ** to pass it as arguments
+            # we pass ** to pass it as arguments to SAVE DATA
             posts.objects.create(**form.cleaned_data)
         else:
             print(form.errors)
