@@ -13,6 +13,16 @@ def post_list_view(request):
     return render(request, "post_list.html", context)
 
 
+def  dynamic_lookup_view(request, id):
+     obj = posts.objects.get(id=id)
+     context = {
+         'object': obj
+     }
+
+     return render(request, "posts/detail.html", context)
+
+
+
 
 def post_delete_view(request, id):
     obj = get_object_or_404(posts, id=id)

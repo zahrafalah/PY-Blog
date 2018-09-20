@@ -16,7 +16,7 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from pages.views import home_view
-from app.views import posts_detail_view, post_create_view, post_delete_view, post_list_view
+from app.views import posts_detail_view, post_create_view, post_delete_view, post_list_view, dynamic_lookup_view
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -24,6 +24,8 @@ urlpatterns = [
     path('posts/', posts_detail_view, name='posts' ), 
     path('create/', post_create_view ),
     path('posts/<int:id>/delete', post_delete_view, name ='product-delete'),
-    path('post/', post_list_view, name='posts' )    
+    path('post/', post_list_view, name='posts' ),
+    path('posts/<int:id>/', dynamic_lookup_view, name='posts-detail' ), 
+
 
 ]

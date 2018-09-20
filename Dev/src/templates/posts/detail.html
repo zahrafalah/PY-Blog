@@ -3,7 +3,7 @@
 {% extends 'base.html' %}
 {% block content %}
 
-<h1>First Post: {{ object.title }}</h1>
+<h1>Post: {{ object.title }}</h1>
 <p>Author: {{object.author}}</p>
 <p>Content: {% if object.bodytext %}{{object.bodytext}}{% else %}"Text coming soon"{% endif %}</p>
 <p>Created: {{object.timestamp}}</p>
