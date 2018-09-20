@@ -3,6 +3,15 @@ from .models import posts
 from .forms import PostForm, RawPostForm
 # Create your views here.
 
+def post_list_view(request):
+    # list of objects
+    queryset = posts.objects.all()
+    print(queryset)
+    context = {
+          "object_list" : queryset
+    }
+    return render(request, "post_list.html", context)
+
 
 
 def post_delete_view(request, id):
