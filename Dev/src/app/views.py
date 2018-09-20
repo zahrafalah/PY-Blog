@@ -3,6 +3,8 @@ from .models import posts
 from .forms import PostForm, RawPostForm
 # Create your views here.
 
+
+
 def post_delete_view(request, id):
     obj = get_object_or_404(posts, id=id)
     # POST request
